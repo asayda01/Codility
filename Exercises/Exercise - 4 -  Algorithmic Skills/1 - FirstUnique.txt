@@ -1,0 +1,14 @@
+
+def solution(A):
+    dic1 = {}
+
+    for i in A:
+        if i in dic1:
+            dic1[i] += 1
+        else:
+            dic1[i] = 1
+            
+    for i in A:
+        if dic1[i] == 1:
+            return i
+    return -1
