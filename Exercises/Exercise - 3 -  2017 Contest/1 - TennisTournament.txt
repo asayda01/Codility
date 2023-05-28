@@ -1,0 +1,6 @@
+def solution(P, C):
+    max_games = P // 2
+    if max_games >= C:
+        return C
+    else:
+        return max_games
