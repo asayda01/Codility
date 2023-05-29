@@ -1,0 +1,33 @@
+def solution(S):
+    string_len = len(S)
+    if string_len % 2 == 0:   return -1
+
+    mid_point_index   = string_len // 2
+    begin_index = 0
+    end_index   = string_len-1
+    
+    while begin_index < mid_point_index:
+        
+        if S[begin_index] != S[end_index]:      return -1
+
+        begin_index += 1
+        end_index -= 1
+    return mid_point_index
+                
+
+
+
+
+
+S1 =  "racecar"
+car1 =  solution(S1)
+print(car1)
+
+
+S2 =  "x"
+car2 =  solution(S2)
+print(car2)
+
+S3 =  ""
+car3 =  solution(S3)
+print(car3)
