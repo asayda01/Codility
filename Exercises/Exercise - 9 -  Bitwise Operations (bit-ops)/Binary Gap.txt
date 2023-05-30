@@ -1,0 +1,31 @@
+def solution(N):
+    
+    bin1 = str(   bin(N)   )  [2:]       # to remove “0b” part
+    bin_group = False
+    high_zero = 0
+    zero_counter = 0
+    
+    for i in bin1:
+        
+        if i == "1":
+            
+            if high_zero < zero_counter:
+                high_zero = zero_counter
+                
+            bin_group = True
+            zero_counter = 0
+            
+        elif bin_group:
+            zero_counter += 1
+            
+    return high_zero
+
+    
+    
+deger = int(1041)
+car_1 = solution(deger)
+print(car_1)
+
+deger2 = int(5)
+car_2 = solution(deger2)
+print(car_2)
