@@ -31,15 +31,72 @@ Write an efficient algorithm for the following assumptions:
 
 """
 
+
 def solution(A):
-    
-    if (len(A)==0):
+
+    if len(A) == 0 or sorted(A)[0] != 1:
         return 1
-        
+
     A.sort()
-    for index , digit in enumerate(A):
+
+    for index, value in enumerate(A):
+
+        if index + 1 != value:
+            return index + 1
+
+    return A [-1] + 1
+
+"""
+
+def solution(A):
+
+    A_len = len(A)
+    arr = [0] * (A_len+1)
+    
+    for el in A:
+        arr[el-1] = 1 # array 0 based
+    
+    for i, item in enumerate(arr):
+        if item == 0:
+            return i+1 # bring back the value
+    return -1
+
+
+"""
+
+"""
+
+def solution(A):
+    N = len(A)
+    return (((N + 1) * ((N + 1) + 1) // 2) - sum(A))
+
+
+"""
+
+"""
+
+def solution(A):
+
+    if (len(A) == 0):
+        return 1
+
+    A.sort()
+    for index, digit in enumerate(A):
         if index+1 != digit and len(A) >= index+1:
             return index+1
 
     return A[len(A)-1]+1
 
+"""
+
+
+"""
+
+def solution(A):
+    missing_element = len(A)+1
+    for idx,value in enumerate(A):
+        missing_element = missing_element ^ value ^ (idx+1)
+    return missing_element
+
+
+"""
